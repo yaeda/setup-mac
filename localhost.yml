@@ -1,0 +1,8 @@
+- name: Setup my Mac
+  hosts: localhost
+  connection: local
+  roles:
+    - { role: homebrew, tags: [homebrew] }
+    - { role: geerlingguy.mas, tags: [homebrew] }
+    - { role: dotfiles, tags: [dotfiles] }
+    - { role: mac, tags: [mac] }

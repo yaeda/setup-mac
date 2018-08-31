@@ -1,0 +1,42 @@
+osx_defaults:
+  - domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+    notify: Restart Dock
+
+  - domain: com.apple.dock
+    key: static-only
+    type: bool
+    value: true
+    notify: Restart Dock
+
+  - domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+    notify: Restart Finder
+
+  - domain: com.apple.finder
+    key: AppleShowAllFiles
+    type: bool
+    value: true
+    notify: Restart Finder
+
+  - domain: com.apple.finder
+    key: ShowPathbar
+    type: bool
+    value: true
+    notify: Restart Finder
+
+  - domain: com.apple.menuextra.clock
+    key: DateFormat
+    type: string
+    value: MMM d  H:mm
+    notify: Restart System UI
+
+  - domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
+    type: boolean
+    value: true
+    notify: Notify Anything

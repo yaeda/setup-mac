@@ -1,0 +1,43 @@
+homebrew_taps:
+  # for google-chrome-canary
+  - homebrew/cask-versions
+  # for logitech-options
+  - homebrew/cask-drivers
+  # for font-ricty-diminished
+  - homebrew/cask-fonts
+
+homebrew_packages:
+  # to use latest `git`
+  - { name: git }
+  - { name: ghq, install_options: completions }
+  - { name: tig }
+  - { name: tmux }
+  # tmux with system clipboard
+  - { name: reattach-to-user-namespace }
+  - { name: fish }
+  - { name: fzf }
+  - { name: jq }
+  - { name: wget }
+  - { name: connect }
+  - { name: diff-so-fancy }
+  - { name: icdiff }
+  - { name: bat }
+  - { name: nodebrew }
+  - { name: mas }
+
+homebrew_cask_packages:
+  - { name: karabiner-elements }
+  - { name: iterm2 }
+  - { name: visual-studio-code }
+  - { name: google-chrome-canary }
+  - { name: google-japanese-ime }
+  - { name: caffeine }
+  - { name: slack }
+  - { name: discord }
+  # for Logicool mouse
+  - { name: logitech-options }
+  # for 'Ricty Diminished' and 'Ricty Diminished Discord'
+  - { name: font-ricty-diminished }
+
+mas_installed_apps:
+  - { id: 413857545, name: 'Divvy - Window Manager' }

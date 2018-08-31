@@ -1,0 +1,40 @@
+- name: Download dotfiles repository
+  git:
+    repo: '{{ dotfiles_repo }}'
+    dest: '{{ dotfiles_root }}'
+
+- name: Check the current symlink for directory
+  stat:
+    path: '{{ item.dest }}'
+  register: directory_stat
+  with_items:
+    - '{{ link_directories }}'
+
+- name: Remove the existed directory
+  file:
+    path: '{{ item.item.dest }}'
+    state: absent
+  when: item.stat.isdir
+  with_items:
+    - '{{ directory_stat.results }}'
+
+- name: Link dotfliles
+  file:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    force: yes
+    state: link
+  with_items:
+    - '{{ link_files }}'
+    - '{{ link_directories }}'
+
+- name: Install setting-sync extension to visual-studio-code
+  command: "code --install-extension '{{ item.publisher }}'.'{{ item.extensionName }}'"
+  with_items:
+    - '{{ visual_studio_code_extensions }}'
+  register: vscode_result
+  changed_when: "'already installed' not in vscode_result.stdout"
+
+- name: Import divvy configuration
+  command: 'open {{ divvy_configuration_uri }}'
+  changed_when: true

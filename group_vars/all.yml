@@ -1,0 +1,3 @@
+workspace_root: '{{ ansible_user_dir }}/workspace'
+dotfiles_repo: https://github.com/yaeda/dotfiles.git
+dotfiles_root: '{{ workspace_root }}/github.com/yaeda/dotfiles'

@@ -1,0 +1,37 @@
+- name: Setup macOS defaults
+  osx_defaults:
+    domain: '{{ item.domain }}'
+    key: '{{ item.key }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+    state: present
+  notify:
+    - '{{ item.notify }}'
+  with_items:
+    - '{{ osx_defaults }}'
+
+- name: Change login shell to fish
+  become: yes
+  become_method: sudo
+  user:
+    name: '{{ ansible_user_id }}'
+    shell: /usr/local/bin/fish
+    state: present
+
+- name: Create functions directory to install Fisherman
+  file:
+    path: '{{ ansible_user_dir }}/.config/fish/functions'
+    state: directory
+    owner: '{{ ansible_user_id }}'
+    mode: 0755
+    recurse: yes
+
+- name: Install Fisherman
+  get_url:
+    url: https://git.io/fisherman
+    dest: '{{ ansible_user_dir }}/.config/fish/functions/fisher.fish'
+
+- name: Generate SSH Key for GitHub
+  command: 'ssh-keygen -t rsa -b 4096 -C "t.yaeda@gmail.com" -f {{ ansible_user_dir }}/.ssh/id_rsa_github_tyaeda_gmail_com'
+  args:
+    creates: '{{ ansible_user_dir }}/.ssh/id_rsa_github_tyaeda_gmail_com'

@@ -1,0 +1,17 @@
+link_files:
+  - { src: '{{ dotfiles_root }}/.gemrc', dest: '{{ ansible_user_dir }}/.gemrc' }
+  - { src: '{{ dotfiles_root }}/.gitconfig', dest: '{{ ansible_user_dir }}/.gitconfig' }
+  - { src: '{{ dotfiles_root }}/.npmrc', dest: '{{ ansible_user_dir }}/.npmrc' }
+  - { src: '{{ dotfiles_root }}/.tmux.conf', dest: '{{ ansible_user_dir }}/.tmux.conf' }
+
+link_directories:
+  - { src: '{{ dotfiles_root }}/.config/fish', dest: '{{ ansible_user_dir }}/.config/fish' }
+  - {
+      src: '{{ dotfiles_root }}/.config/karabiner',
+      dest: '{{ ansible_user_dir }}/.config/karabiner',
+    }
+
+visual_studio_code_extensions:
+  - { publisher: shan, extensionName: code-settings-sync }
+
+divvy_configuration_uri: divvy://import/YnBsaXN0MDDUAQIDBAUGbW5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcIFCorMjs8RUZPUFdYX2BoaVUkbnVsbNIJCgsTWk5TLm9iamVjdHNWJGNsYXNzpwwNDg8QERKAAoAFgAeACYALgA2AD4AR3RUWFxgZChobHB0eHyAhIiMkJCYiJyEoIyMpWHNpemVSb3dzXxAPc2VsZWN0aW9uRW5kUm93XxARc2VsZWN0aW9uU3RhcnRSb3dac3ViZGl2aWRlZFZnbG9iYWxfEBJzZWxlY3Rpb25FbmRDb2x1bW5XZW5hYmxlZFtzaXplQ29sdW1uc1duYW1lS2V5XGtleUNvbWJvQ29kZV8QFHNlbGVjdGlvblN0YXJ0Q29sdW1uXWtleUNvbWJvRmxhZ3MQBhAFEAAICIAECYADEgAQAABTQWxs0iwtLi9aJGNsYXNzbmFtZVgkY2xhc3Nlc1hTaG9ydGN1dKIwMVhTaG9ydGN1dFhOU09iamVjdN0VFhcYGQoaGxwdHh8gISIjJCQmIichNzg5OggIgAQJgAYQAxAEEgAQAABVUmlnaHTdFRYXGBkKGhscHR4fICEiIyQkJkAnIUJDI0QICIAEEAEJgAgQCxIAEAAAVExlZnTdFRYXGBkKGhscHR4fICEiIyQkJjgnIUtMTU4ICIAECYAKECUQAhIAEAAAVkNlbnRlct0VFhcYGQoaGxwdHh8gISIjJCQmIichVThNVggIgAQJgAwSABQAAFpXaWRlIFJpZ2h03RUWFxgZChobHB0eHyAhIiMkJCY4JyFdQyNeCAiABAmADhIAFAAAWVdpZGUgTGVmdN0VFhcYGQoaGxwdHh8gISIjJCQmOSchZWZAZwgIgAQJgBAQJRIAFAAAW1dpZGUgQ2VudGVy0iwtamteTlNNdXRhYmxlQXJyYXmjamwxV05TQXJyYXlfEA9OU0tleWVkQXJjaGl2ZXLRb3BUcm9vdIABAAgAEQAaACMALQAyADcATABSAFcAYgBpAHEAcwB1AHcAeQB7AH0AfwCBAJwApQC3AMsA1gDdAPIA+gEGAQ4BGwEyAUABQgFEAUYBRwFIAUoBSwFNAVIBVgFbAWYBbwF4AXsBhAGNAagBqQGqAawBrQGvAbEBswG4Ab4B2QHaAdsB3QHfAeAB4gHkAekB7gIJAgoCCwINAg4CEAISAhQCGQIgAjsCPAI9Aj8CQAJCAkcCUgJtAm4CbwJxAnICdAJ5AoMCngKfAqACogKjAqUCpwKsArgCvQLMAtAC2ALqAu0C8gAAAAAAAAIBAAAAAAAAAHEAAAAAAAAAAAAAAAAAAAL0

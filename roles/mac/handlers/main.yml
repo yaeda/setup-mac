@@ -1,0 +1,15 @@
+- name: Restart Dock
+  shell: |
+    killall Dock
+
+- name: Restart Finder
+  shell: |
+    killall Finder
+
+- name: Restart System UI
+  shell: |
+    killall SystemUIServer
+
+- name: Notify Anything
+  debug:
+    msg: wrote defaults
