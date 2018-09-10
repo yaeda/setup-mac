@@ -5,6 +5,7 @@ Setup Mac for Development
 ## Usage
 
 ```
+xcode-select --install
 curl -LSfs https://raw.githubusercontent.com/yaeda/setup-mac/master/install.sh | bash
 ```
 
