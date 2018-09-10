@@ -10,4 +10,6 @@ setup-ansible:
 run-ansible:
 	@ansible-playbook site.yml --ask-become-pass
 
-.PHONY: setup-base setup-ansible run-ansible
+all: setup-base setup-ansible run-ansible
+
+.PHONY: all

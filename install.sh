@@ -13,7 +13,7 @@ unzip -oq ${tempfile} -d ${workspace}
 pushd ${workspace}/setup-mac-master > /dev/null
 
 # Install
-make
+make all
 
 # Move to original path
 popd > /dev/null
