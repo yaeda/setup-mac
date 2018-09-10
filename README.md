@@ -16,8 +16,8 @@ curl -LSfs https://raw.githubusercontent.com/yaeda/setup-mac/master/install.sh |
 If you need, set proxy before the above command.
 
 ```
-export http_proxy <HOST>:<PORT>
-export https_proxy <HOST>:<PORT>
+export http_proxy=<HOST>:<PORT>
+export https_proxy=<HOST>:<PORT>
 ```
 
 **Apple ID**
