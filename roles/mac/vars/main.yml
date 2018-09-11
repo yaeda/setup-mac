@@ -11,6 +11,12 @@ osx_defaults:
     value: true
     notify: Restart Dock
 
+  - domain: com.apple.dock
+    key: orientation
+    type: string
+    value: left
+    notify: Restart Dock
+
   - domain: NSGlobalDomain
     key: AppleShowAllExtensions
     type: bool
