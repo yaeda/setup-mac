@@ -66,7 +66,7 @@ Because `mas signin` doesn't work on High Sierra.
 
 **GitHub with Proxy**
 
-Create ~/.ssh/config like below.
+Create ~/.ssh/config.proxy like below.
 
 ```
 Host github.com
