@@ -3,8 +3,8 @@ setup-base:
 	-@ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 setup-ansible:
-	@easy_install pip
-	@pip install ansible
+	@sudo easy_install pip
+	@sudo pip install ansible
 	@ansible-galaxy install geerlingguy.mas
 
 run-ansible:
