@@ -14,7 +14,9 @@
   file:
     path: '{{ item.item.dest }}'
     state: absent
-  when: item.stat.isdir
+  when:
+    - item.stat.exists
+    - not item.stat.islnk
   with_items:
     - '{{ directory_stat.results }}'
 
