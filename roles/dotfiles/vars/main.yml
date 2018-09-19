@@ -4,6 +4,9 @@ link_files:
   - { src: '{{ dotfiles_root }}/.npmrc', dest: '{{ ansible_user_dir }}/.npmrc' }
   - { src: '{{ dotfiles_root }}/.tmux.conf', dest: '{{ ansible_user_dir }}/.tmux.conf' }
 
+config_directories:
+  - { src: '{{ ansible_user_dir }}/.config' }
+
 link_directories:
   - { src: '{{ dotfiles_root }}/.config/fish', dest: '{{ ansible_user_dir }}/.config/fish' }
   - {

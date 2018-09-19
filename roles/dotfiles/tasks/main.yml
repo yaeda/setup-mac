@@ -3,6 +3,22 @@
     repo: '{{ dotfiles_repo }}'
     dest: '{{ dotfiles_root }}'
 
+- name: Check the configuration directory
+  stat:
+    path: '{{ item.src }}'
+  register: config_directory_stat
+  with_items:
+    - '{{ config_directories }}'
+
+- name: Create the configuration directory
+  file:
+    path: '{{ item.item.src }}'
+    state: directory
+  when:
+    - not item.stat.exists
+  with_items:
+    - '{{ config_directory_stat.results }}'
+
 - name: Check the current symlink for directory
   stat:
     path: '{{ item.dest }}'
